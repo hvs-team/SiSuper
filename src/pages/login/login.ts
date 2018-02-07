@@ -8,6 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
+  submitted = true;
+  lihat = false;
+  status = "password";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -15,4 +19,15 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  showPassword(){
+    this.status = "text";
+    this.lihat = false;
+    console.log(this.status);
+  }
+
+  hidePassword(){
+    this.status = "password";
+    this.lihat = true;
+    console.log(this.status);
+  }
 }
