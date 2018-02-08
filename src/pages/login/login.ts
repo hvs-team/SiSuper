@@ -4,6 +4,7 @@ import { SignupPage } from '../signup/signup';
 import { HomePage } from '../home/home';
 import { ProdukkuPage } from '../produkku/produkku';
 import { ListPage } from '../list/list';
+import { ListUsahaPage } from '../list-usaha/list-usaha';
 
 @Component({
   selector: 'page-login',
@@ -43,6 +44,6 @@ export class LoginPage {
   }
 
   masuk(){
-    this.navCtrl.setRoot(ListPage)
+    this.navCtrl.setRoot(ListUsahaPage)
   }
 }
