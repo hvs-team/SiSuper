@@ -4,15 +4,96 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Signup</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
 
+<ion-content class="background" padding>
+  <img src="assets/pict/logo.png" class='Logo'>
+  
+    <form #loginForm="ngForm" novalidate>
+      <ion-list >
+        <!-- input nama -->
+        <ion-item>
+          <ion-label floating><p class="Head">Nama</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="nama" name="nama" type="string" #user="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        Nama harus diisi
+        </p>
+
+        <!-- email -->
+        <ion-item>
+          <ion-label floating><p class="Head">Email</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="email" name="email" type="email" #user="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        Email harus diisi
+        </p>
+  
+        <!-- password -->
+        <ion-item>
+          <ion-label floating><p class="Head">Password</p></ion-label>
+          <ion-input class="Head2"  [(ngModel)]="password" name="pass" type="{{status}}" #pass="ngModel"  required>
+          </ion-input>
+          <button class="tombol" [hidden]="lihat == false" (click)="showPassword()" ion-button clear color="dark" type="button" item-right> <ion-icon name="md-eye" class='icon' color="primary2"> </ion-icon> </button>
+          <button class="tombol" [hidden]="lihat == true" (click)="hidePassword()" ion-button clear color="dark" type="button" item-right> <ion-icon name="md-eye-off" class='icon' color="primary2"> </ion-icon> </button>
+        </ion-item>
+        <p ion-text [hidden]="pass.valid || submitted == false" color="light" padding-left class="Warning">
+          Password harus diisi
+        </p>
+
+        <!-- nomor telepon -->
+        <ion-item>
+          <ion-label floating><p class="Head">Nomor Telepon</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="nomorTelepon" name="nomorTelepon" type="number" #user="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        Nomor Telepon harus diisi
+        </p>
+
+        <!-- alamat -->
+        <ion-item>
+            <ion-label floating><p class="Head">Nomor Telepon</p></ion-label>
+            <ion-input class="Head2" [(ngModel)]="alamat" name="alamat" type="string" #user="ngModel" spellcheck="false" autocapitalize="off"
+              required>
+            </ion-input>
+          </ion-item>
+          <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+          Alamat harus diisi
+          </p>
+      </ion-list>
+
+      <!--ini buat mock up-->
+      <ion-row>
+        <ion-col>
+          <button class="ButtonMasuk" color="sisuperPurpleDark" ion-button (click)="masuk(loginForm)" block><p class="ButtonWord">Masuk</p></button>
+        </ion-col>
+      </ion-row>
+  
+  <!--		
+      <div text-center>
+        <button ion-button medium>
+          Click Here
+        </button>
+      </div>
+          -->
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col text-center>
+            <p class="Head">
+              <font color="white">Sudah punya akun?</font>
+              <a class="Link" (click)="masuk()" class="buat"> Masuk.</a>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+    </form>
 </ion-content>

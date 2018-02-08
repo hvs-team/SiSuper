@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-login',
@@ -29,5 +29,9 @@ export class LoginPage {
     this.status = "password";
     this.lihat = true;
     console.log(this.status);
+  }
+
+  daftar(){
+    this.navCtrl.setRoot(SignupPage);
   }
 }
