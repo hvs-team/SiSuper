@@ -9,8 +9,8 @@ import { LoginPage } from '../login/login';
 })
 export class SignupPage {
 
-  submitted = true;
-  lihat = false;
+  submitted = false;
+  lihat = true;
   status = "password";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
