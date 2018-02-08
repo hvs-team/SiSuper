@@ -1,3 +1,16 @@
 page-invitation {
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: rgb(47, 151, 236);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
+    .wordNavbar{
+        color: #f4f4f4;
+        font-size: 7vw;
+        font-weight: 700;
+
+        font-style: italic;
+    }
 }

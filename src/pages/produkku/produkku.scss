@@ -2,7 +2,7 @@ page-produkku {
 
     .background {
         //background-image: url('../assets/pict/welcome.png');
-        background-color: rgb(47, 151, 236);
+        background-color: $cssPurpleLight;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -13,6 +13,35 @@ page-produkku {
         font-weight: 700;
 
         font-style: italic;
+    }
+
+
+    .ButtonBig {
+        margin: auto;
+        width: 90%;
+        height: 14vw !important;
+        border: 2px solid rgba(255,255,255,0.7);
+        margin-bottom: 2.5vh;
+    }
+
+    .ButtonWordWhite {
+        font-size: 6vw;
+        font-weight: 2px;
+        color: white;
+        text-transform: capitalize;
+    }
+
+    //produkcard
+    .produkCard{
+        background-color: white;
+        border: 2px solid $cssPurpleDark;
+        padding: 2.5vw;
+        margin: 1vh 0;
+    }
+
+    .produkContent{
+        font-size: 4.5vw;
+        font-weight: 500;
     }
 
 }
