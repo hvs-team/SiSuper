@@ -17,13 +17,21 @@ page-onboarding {
         opacity: 1;
     }
 
+    .logoDiv{
+        position: absolute;
+        top: 5vh;
+
+        width: 100%;
+
+        // background-color: red;
+    }
+
     .LogoMuser {
         width:50vw; /* you can use % */
         height: auto;
 
-        position: relative;
-        bottom: 5vh;
-        
+        display: block;
+        margin: auto;
     }
 
     .LogoMuser2 {
@@ -33,10 +41,19 @@ page-onboarding {
     }
 
     .GambarSplash {
-        width:70vw; /* you can use % */
+        width:65vw; /* you can use % */
         height: auto;
 
         margin: auto;
+        margin-bottom: 10vh;
+    }
+
+    .GambarSplashMaskot {
+        width:60vw; /* you can use % */
+        height: auto;
+
+        margin: auto;
+        margin-bottom: 10vh;
     }
 
 
@@ -55,7 +72,7 @@ page-onboarding {
     .ButtonWordPurple {
         font-size: 6vw;
         font-weight: 2px;
-        color: #AB6ABA;
+        color: $cssPurpleDark;
         text-transform: capitalize;
     }
 
@@ -67,10 +84,45 @@ page-onboarding {
     }
     
     .ButtonLogin {
-        height: 10vw !important;
+        height: 14vw !important;
         // // width: 50vw;
         // margin: auto;
         // margin-top: 5vh;
+    }
+
+    .textDiv{
+        width: 100%;
+
+        position: absolute;
+        bottom: 10vh;
+    }
+
+    .textPosition{
+        width: 90%;
+        
+        display: block;
+        margin: auto;
+    }
+
+    .headText{
+        position: relative;
+        // bottom: 5px;
+        color: white;
+        font-weight: 500;
+        font-size: 6vw;
+        
+    }
+
+    .contentText { 
+        color: white;
+        font-size: 5vw;
+    }
+
+    .gridDiv{
+        width: 100%;
+
+        position: absolute;
+        bottom: 10vh;
     }
 
 }
