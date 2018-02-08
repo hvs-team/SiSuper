@@ -1,7 +1,7 @@
 page-event {
     .background {
         //background-image: url('../assets/pict/welcome.png');
-        background-color: rgb(47, 151, 236);
+        background-color: $cssPurpleLight;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -12,5 +12,41 @@ page-event {
         font-weight: 700;
 
         font-style: italic;
+    }
+
+    //card
+    .eventCard{
+        width: 95vw;
+        margin: auto;
+        margin-top: 2.5vw;
+        background-color: white;
+        border-bottom: 2px solid rgba(0,0,0,0.5);
+    }
+
+    .pictEvent{
+        width: 95vw;
+        height: 50vw;
+    }
+
+    .dateEvent{
+        padding: 0.5vh 2vw;
+        font-size: 4vw;
+    }
+
+    .nameEvent{
+        padding: 0.5vh 2vw;
+        font-size: 5.5vw;
+        font-weight: 500;
+    }
+
+    .addressEvent{
+        padding: 0.5vh 2vw;
+        font-size: 4vw;
+
+        
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
