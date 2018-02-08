@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { HomePage } from '../home/home';
+import { ProdukkuPage } from '../produkku/produkku';
 
 @Component({
   selector: 'page-login',
@@ -37,6 +38,6 @@ export class LoginPage {
   }
 
   skip(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(ProdukkuPage);
   }
 }

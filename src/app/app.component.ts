@@ -6,6 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
+import { EventPage } from '../pages/event/event';
+import { InvitationPage } from '../pages/invitation/invitation';
+import { PricePage } from '../pages/price/price';
+import { ProdukkuPage } from '../pages/produkku/produkku';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileUsahaPage } from '../pages/profile-usaha/profile-usaha';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,8 +28,13 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Produk-ku', component: ProdukkuPage },
+      { title: 'Kegiatan', component: EventPage },
+      { title: 'Agenda', component: EventPage },
+      { title: 'Undangan', component: InvitationPage },
+      { title: 'Daftar Harga', component: PricePage },
+      { title: 'Profil Saya', component: ProfilePage },
+      { title: 'Profil UMKM', component: ProfileUsahaPage }
     ];
 
   }
