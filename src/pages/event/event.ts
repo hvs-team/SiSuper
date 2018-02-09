@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventDetailPage } from '../event-detail/event-detail';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class EventPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventPage');
+  }
+
+  gotoDetail(){
+    this.navCtrl.push(EventDetailPage);
   }
 
 }
