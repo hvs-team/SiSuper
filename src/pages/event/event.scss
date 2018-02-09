@@ -43,10 +43,12 @@ page-event {
         padding: 0.5vh 2vw;
         font-size: 4vw;
 
+        text-align: justify;
+
         
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        // overflow: hidden;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 2;
+        // -webkit-box-orient: vertical;
     }
 }
