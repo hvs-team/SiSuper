@@ -22,6 +22,7 @@ import { SignupPage } from '../pages/signup/signup';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { TambahUsahaPage } from '../pages/tambah-usaha/tambah-usaha';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfileUsahaPage,
     SignupPage,
 
-    ListPage
+    ListPage,
+    TambahUsahaPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProfileUsahaPage,
     SignupPage,
 
-    ListPage
+    ListPage,
+    TambahUsahaPage,
   ],
   providers: [
     StatusBar,

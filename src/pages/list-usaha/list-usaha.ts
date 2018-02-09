@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TambahUsahaPage } from '../tambah-usaha/tambah-usaha';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class ListUsahaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListUsahaPage');
+  }
+
+  tambah(){
+    this.navCtrl.push(TambahUsahaPage);
   }
 
 }

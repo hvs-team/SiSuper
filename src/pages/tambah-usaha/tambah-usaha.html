@@ -1,0 +1,57 @@
+<!--
+  Generated template for the TambahUsahaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="sisuperPurpleDark">
+    <ion-title>Tambah Usaha</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="background" padding>
+
+    <img src="assets/pict/logo.png" class='Logo'>
+
+    <form #loginForm="ngForm" novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-label floating><p class="Head">Nama Usaha</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="namaUsaha" name="namaUsaha" type="email" #name="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        Nama Usaha harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label>Jenis Usaha</ion-label>
+          <ion-select [(ngModel)]="jenis">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        Jenis Usaha harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Lama Usaha (Dalam Tahun)</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="lamaUsaha" name="lamaUsaha" type="email" #old="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        Lama Usaha harus diisi
+        </p>
+      </ion-list>
+    </form>
+
+</ion-content>

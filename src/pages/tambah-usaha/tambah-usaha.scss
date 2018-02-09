@@ -1,0 +1,27 @@
+page-tambah-usaha {
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: #5B6ABF;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .Logo {
+        height: 20vw; 
+        width: 60vw; 
+        display: block; 
+        margin: auto;
+        margin-top: 7vw;
+        margin-bottom: 7vw;
+    }
+
+    .Head {
+        font-size: 5vw;
+        color: white;
+    }
+
+    .Head2 {
+        font-size: 5vw;
+        color: white;
+    }
+}
