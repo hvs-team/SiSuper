@@ -20,11 +20,12 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ProfileUsahaPage } from '../pages/profile-usaha/profile-usaha';
 import { SignupPage } from '../pages/signup/signup';
 import { AgendaPage } from '../pages/agenda/agenda';
+import { TambahUsahaPage } from '../pages/tambah-usaha/tambah-usaha';
+import { ProdukkuTambahPage } from '../pages/produkku-tambah/produkku-tambah';
+import { AgendaDetailPage } from '../pages/agenda-detail/agenda-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { TambahUsahaPage } from '../pages/tambah-usaha/tambah-usaha';
-import { ProdukkuTambahPage } from '../pages/produkku-tambah/produkku-tambah';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ProdukkuTambahPage } from '../pages/produkku-tambah/produkku-tambah';
     ProfileUsahaPage,
     SignupPage,
     AgendaPage,
+    AgendaDetailPage,
 
     ListPage,
     TambahUsahaPage
@@ -75,6 +77,7 @@ import { ProdukkuTambahPage } from '../pages/produkku-tambah/produkku-tambah';
     ProfileUsahaPage,
     SignupPage,
     AgendaPage,
+    AgendaDetailPage,
 
     ListPage,
     TambahUsahaPage,

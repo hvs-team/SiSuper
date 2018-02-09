@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AgendaDetailPage } from '../agenda-detail/agenda-detail';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class AgendaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AgendaPage');
+  }
+
+  gotoDetail(){
+    this.navCtrl.push(AgendaDetailPage);
   }
 
 }
