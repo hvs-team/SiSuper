@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AgendaPage } from '../agenda/agenda';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class InvitationDetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InvitationDetailPage');
+  }
+
+  addAgenda(){
+    this.navCtrl.setRoot(AgendaPage);
   }
 
 }

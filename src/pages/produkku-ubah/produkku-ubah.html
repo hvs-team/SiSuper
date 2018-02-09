@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar color="sisuperPurpleDark">
+      <ion-title>
+        <span class="wordNavbar">Ubah Produk-ku</span>
+      </ion-title>
+      <ion-buttons start>
+        <button class="wordNavbar" ion-button (click)="dismiss()">
+          <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->
+          <!-- <ion-icon name="md-close" showWhen="android,windows"></ion-icon> -->
+  
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content padding class="background">
+    <form #loginForm="ngForm" novalidate>
+        <ion-list >
+          <ion-item>
+            <ion-label floating><p class="Head">Nama Produk</p></ion-label>
+            <ion-input class="Head2" [(ngModel)]="namaProduk" name="namaproduk" type="text" #name="ngModel" spellcheck="false" autocapitalize="off"
+              required>
+            </ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating><p class="Head">Harga Produk</p></ion-label>
+            <ion-input class="Head2" [(ngModel)]="hargaProduk" name="hargaproduk" type="number" #name="ngModel" spellcheck="false" autocapitalize="off"
+              required>
+            </ion-input>
+          </ion-item>
+  
+          <ion-item no-lines>
+            <ion-label floating><p class="Head">Satuan Produk</p></ion-label>
+            <ion-select class="Head" [(ngModel)]="satuanProduk" (ionChange)="satuanSelect()"  name="pilihan" interface="popover">
+              <ion-option value="kg">/Kg</ion-option>
+              <ion-option value="pcs">/Pcs</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <!--ini buat mock up-->
+        <ion-row>
+          <ion-col>
+            <button class="ButtonMasuk" color="sisuperPurpleDark" ion-button (click)="tambah(loginForm)" block><p class="ButtonWord">Ubah</p></button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <button class="ButtonMasuk" color="danger" ion-button (click)="delete()" block><p class="ButtonWord">Hapus</p></button>
+          </ion-col>
+        </ion-row>
+    
+      </form>
+  
+  </ion-content>
+  

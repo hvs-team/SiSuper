@@ -1,0 +1,68 @@
+page-produkku-ubah {
+    .wordNavbar{
+        color: #f4f4f4;
+        font-size: 7vw;
+        font-weight: 700;
+
+        font-style: italic;
+    }
+
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: #5B6ABF;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .buat{
+        color: white;
+        font-weight: bold;
+    }
+
+    .Logo {
+        height: 20vw; 
+        width: 60vw; 
+        display: block; 
+        margin: auto;
+        margin-top: 7vw;
+        margin-bottom: 7vw;
+    }
+
+    .Head {
+        font-size: 5vw;
+        color: white;
+    }
+
+    .Head2 {
+        font-size: 5vw;
+        color: white;
+    }
+
+    .item-md {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .lupaPass{
+        color: white;
+        font-size: 5vw;
+        text-decoration: underline;
+    }
+
+    .icon{
+        font-size: 7vw;
+        float: left;
+        background-size: 1vw;
+        color: rgba(255, 255, 255, 0.7)
+    }
+
+    .tombol{
+        height: 10vw !important;
+        position: relative;
+        top: 5vw;
+        color: #25408E;
+    }
+
+    .Warning{
+        font-style: italic;
+    }
+}

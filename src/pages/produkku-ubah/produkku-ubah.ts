@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController, AlertController  } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'page-produkku-tambah',
-  templateUrl: 'produkku-tambah.html',
+  selector: 'page-produkku-ubah',
+  templateUrl: 'produkku-ubah.html',
 })
-export class ProdukkuTambahPage {
+export class ProdukkuUbahPage {
 
   submitted = false;
 
@@ -20,12 +20,13 @@ export class ProdukkuTambahPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    public loadCtrl: LoadingController) {
+    public loadCtrl: LoadingController,
+    public alertCtrl: AlertController) {
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProdukkuTambahPage');
+    console.log('ionViewDidLoad ProdukkuUbahPage');
   }
 
   ionViewWillLeave() {
@@ -91,5 +92,28 @@ export class ProdukkuTambahPage {
   }
 
 
+  delete(){
+    let confirm = this.alertCtrl.create({
+      title: 'Hapus Produk Ayam Geprek Pedes?',
+      
+      buttons: [
+        {
+          text: 'Batal',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Hapus',
+          handler: () => {
+            console.log('Agree clicked');
+            this.dismiss();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+  
 
 }

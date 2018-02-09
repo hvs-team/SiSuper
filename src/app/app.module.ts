@@ -26,6 +26,7 @@ import { AgendaDetailPage } from '../pages/agenda-detail/agenda-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProdukkuUbahPage } from '../pages/produkku-ubah/produkku-ubah';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PriceDetailPage,
     ProdukkuPage,
     ProdukkuTambahPage,
+    ProdukkuUbahPage,
     ProfilePage,
     ProfileUsahaPage,
     SignupPage,
@@ -73,6 +75,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PriceDetailPage,
     ProdukkuPage,
     ProdukkuTambahPage,
+    ProdukkuUbahPage,
     ProfilePage,
     ProfileUsahaPage,
     SignupPage,

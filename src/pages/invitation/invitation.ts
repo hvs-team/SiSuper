@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InvitationDetailPage } from '../invitation-detail/invitation-detail';
 
 
 @Component({
@@ -13,6 +14,10 @@ export class InvitationPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InvitationPage');
+  }
+
+  gotoDetail(){
+    this.navCtrl.push(InvitationDetailPage);  
   }
 
 }
