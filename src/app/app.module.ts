@@ -19,6 +19,7 @@ import { ProdukkuPage } from '../pages/produkku/produkku';
 import { ProfilePage } from '../pages/profile/profile';
 import { ProfileUsahaPage } from '../pages/profile-usaha/profile-usaha';
 import { SignupPage } from '../pages/signup/signup';
+import { AgendaPage } from '../pages/agenda/agenda';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,6 +44,7 @@ import { TambahUsahaPage } from '../pages/tambah-usaha/tambah-usaha';
     ProfilePage,
     ProfileUsahaPage,
     SignupPage,
+    AgendaPage,
 
     ListPage,
     TambahUsahaPage
@@ -69,6 +71,7 @@ import { TambahUsahaPage } from '../pages/tambah-usaha/tambah-usaha';
     ProfilePage,
     ProfileUsahaPage,
     SignupPage,
+    AgendaPage,
 
     ListPage,
     TambahUsahaPage,

@@ -12,6 +12,7 @@ import { PricePage } from '../pages/price/price';
 import { ProdukkuPage } from '../pages/produkku/produkku';
 import { ProfilePage } from '../pages/profile/profile';
 import { ProfileUsahaPage } from '../pages/profile-usaha/profile-usaha';
+import { AgendaPage } from '../pages/agenda/agenda';
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +31,7 @@ export class MyApp {
     this.pages = [
       { title: 'Produk-ku', component: ProdukkuPage },
       { title: 'Kegiatan', component: EventPage },
-      { title: 'Agenda', component: EventPage },
+      { title: 'Agenda', component: AgendaPage },
       { title: 'Undangan', component: InvitationPage },
       { title: 'Daftar Harga', component: PricePage },
       { title: 'Profil Saya', component: ProfilePage },
