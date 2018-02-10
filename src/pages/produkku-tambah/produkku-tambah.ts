@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController,AlertController } from 'ionic-angular';
+import { Data } from '../../providers/data';
 import { NgForm } from '@angular/forms';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-produkku-tambah',
@@ -16,11 +18,16 @@ export class ProdukkuTambahPage {
 
   satuanStatus:any=false;
 
+  produkkus:any;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    public loadCtrl: LoadingController) {
+    public loadCtrl: LoadingController,
+    public alertCtrl: AlertController,
+    private data : Data,
+    public http: Http) {
 
   }
 
@@ -28,9 +35,6 @@ export class ProdukkuTambahPage {
     console.log('ionViewDidLoad ProdukkuTambahPage');
   }
 
-  ionViewWillLeave() {
-    // refresh content disini mungkin
-  }
 
   dismiss(){
     this.viewCtrl.dismiss();
@@ -52,39 +56,35 @@ export class ProdukkuTambahPage {
       
       loading.present();
 
-      //apiLogin
-      // let input = {
-      //   namaProduk: this.namaProduk, 
-      //   hargaProduk: this.hargaProduk,
-      //   satuan: this.satuanProduk
-      // };
-      //   this.http.post(this.data.BASE_URL+"/signin",input).subscribe(data => {
-      //   let response = data.json();
-      //   if(response.status==true){
-      //     console.log(response);     
-      //     this.data.logout();
-      //     this.data.token(response.token);   
-      //     this.data.login(response.user,"user");//ke lokal
-      //     this.createUser("user");
-      //     this.Login();
-      //     loading.dismiss();
-      //   }
-      //   else {
-      //     loading.dismiss();
-      //      let alert = this.alertCtrl.create({
-      //         title: 'Gagal Masuk',
-      //         subTitle: 'Invalid User',      
-      //         buttons: ['OK']
-      //       });
-      //       alert.present();
-      //   }      
+      // api
+      let input = {
+        nama: this.namaProduk, 
+        harga: this.hargaProduk,
+        satuan: this.satuanProduk
+      };
+        this.http.post(this.data.BASE_URL+"/daftar_produk.php?id_usaha="+"1",input).subscribe(data => {
+        let response = data.json();
 
-    // });
+        console.log(response);
+        if(response.status==200){
 
-      //apilogin  
+          loading.dismiss();
+          this.dismiss();
+        }
+        else {
+          loading.dismiss();
+           let alert = this.alertCtrl.create({
+              title: 'Gagal Menambahkan',
+              subTitle: 'Silahkan coba lagi',      
+              buttons: ['OK']
+            });
+            alert.present();
+        }      
 
-      loading.dismiss();
-      this.dismiss();
+      });
+
+      // api
+
     }
     
 

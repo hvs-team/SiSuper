@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, LoadingController, AlertController  } from 'ionic-angular';
+import { Data } from '../../providers/data';
 import { NgForm } from '@angular/forms';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-produkku-ubah',
@@ -13,24 +15,29 @@ export class ProdukkuUbahPage {
   namaProduk:any;
   hargaProduk:any;
   satuanProduk:any;
+  idProduk:any;
 
-  satuanStatus:any=false;
+  satuanStatus:any=true;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public loadCtrl: LoadingController,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    private data : Data,
+    public http: Http) {
+
+      let temp = this.navParams.data;
+      this.namaProduk = temp.nama_produk;
+      this.hargaProduk = temp.harga_produk;
+      this.satuanProduk = temp.satuan_produk;
+      this.idProduk = temp.id_produk;
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProdukkuUbahPage');
-  }
-
-  ionViewWillLeave() {
-    // refresh content disini mungkin
   }
 
   dismiss(){
@@ -39,6 +46,44 @@ export class ProdukkuUbahPage {
 
   satuanSelect(){
     this.satuanStatus=true;
+  }
+
+  hapusProduk(){
+    let loading = this.loadCtrl.create({
+      content: 'memuat..'
+    });
+
+    loading.present();
+
+    // api
+    let input = {
+      nama: this.namaProduk, 
+      harga: this.hargaProduk,
+      satuan: this.satuanProduk
+    };
+      this.http.get(this.data.BASE_URL+"/hapus_produk.php?id_produk="+this.idProduk).subscribe(data => {
+      let response = data.json();
+
+      console.log(response);
+      if(response.status==200){
+
+        loading.dismiss();
+        this.dismiss();
+      }
+      else {
+        loading.dismiss();
+         let alert = this.alertCtrl.create({
+            title: 'Gagal Menambahkan',
+            subTitle: 'Silahkan coba lagi',      
+            buttons: ['OK']
+          });
+          alert.present();
+      }      
+
+    });
+
+    // api
+  
   }
 
   tambah(form: NgForm) {
@@ -53,39 +98,43 @@ export class ProdukkuUbahPage {
       
       loading.present();
 
-      //apiLogin
-      // let input = {
-      //   namaProduk: this.namaProduk, 
-      //   hargaProduk: this.hargaProduk,
-      //   satuan: this.satuanProduk
-      // };
-      //   this.http.post(this.data.BASE_URL+"/signin",input).subscribe(data => {
-      //   let response = data.json();
-      //   if(response.status==true){
-      //     console.log(response);     
-      //     this.data.logout();
-      //     this.data.token(response.token);   
-      //     this.data.login(response.user,"user");//ke lokal
-      //     this.createUser("user");
-      //     this.Login();
-      //     loading.dismiss();
-      //   }
-      //   else {
-      //     loading.dismiss();
-      //      let alert = this.alertCtrl.create({
-      //         title: 'Gagal Masuk',
-      //         subTitle: 'Invalid User',      
-      //         buttons: ['OK']
-      //       });
-      //       alert.present();
-      //   }      
+      // api
+      let input = {
+        nama: this.namaProduk, 
+        harga: this.hargaProduk,
+        satuan: this.satuanProduk
+      };
+        this.http.post(this.data.BASE_URL+"/ubah_produk.php?id_produk="+this.idProduk,input).subscribe(data => {
+        let response = data.json();
 
-    // });
+        console.log(input);
+        if(response.status==200){
 
-      //apilogin  
+          loading.dismiss();
+          this.dismiss();
+        }
+        else {
+          loading.dismiss();
+           let alert = this.alertCtrl.create({
+              title: 'Gagal Menambahkan',
+              subTitle: 'Silahkan coba lagi',      
+              buttons: ['OK']
+            });
+            alert.present();
+        }      
 
-      loading.dismiss();
-      this.dismiss();
+      });
+
+      // api
+
+    }
+    else {
+      let alert = this.alertCtrl.create({
+        title: 'Gagal Mengubah Data',
+        subTitle: 'Harap isi semua data produk.',      
+        buttons: ['OK']
+      });
+      alert.present();
     }
     
 
@@ -107,7 +156,7 @@ export class ProdukkuUbahPage {
           text: 'Hapus',
           handler: () => {
             console.log('Agree clicked');
-            this.dismiss();
+            this.hapusProduk();
           }
         }
       ]
