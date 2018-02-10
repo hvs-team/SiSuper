@@ -29,6 +29,8 @@ import { AgendaDetailPage } from '../pages/agenda-detail/agenda-detail';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProdukkuUbahPage } from '../pages/produkku-ubah/produkku-ubah';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { EditProfileUsahaPage } from '../pages/edit-profile-usaha/edit-profile-usaha';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { ProdukkuUbahPage } from '../pages/produkku-ubah/produkku-ubah';
     SignupPage,
     AgendaPage,
     AgendaDetailPage,
+    EditProfilePage,
+    EditProfileUsahaPage,
 
     ListPage,
     TambahUsahaPage
@@ -83,6 +87,8 @@ import { ProdukkuUbahPage } from '../pages/produkku-ubah/produkku-ubah';
     SignupPage,
     AgendaPage,
     AgendaDetailPage,
+    EditProfilePage,
+    EditProfileUsahaPage,
 
     ListPage,
     TambahUsahaPage,
