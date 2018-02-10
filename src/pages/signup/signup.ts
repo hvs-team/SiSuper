@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
+import { ProdukkuPage } from '../produkku/produkku';
 
 @Component({
   selector: 'page-signup',
@@ -34,6 +35,10 @@ export class SignupPage {
 
   masuk(){
     this.navCtrl.setRoot(LoginPage);
+  }
+
+  daftar(){
+    this.navCtrl.setRoot(ProdukkuPage);
   }
   
 }
