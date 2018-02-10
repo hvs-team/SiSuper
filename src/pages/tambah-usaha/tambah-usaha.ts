@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Camera, CameraOptions } from '@ionic-native/camera';
 /**
  * Generated class for the TambahUsahaPage page.
  *
@@ -14,11 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TambahUsahaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  submitted = false;
+
+  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TambahUsahaPage');
+  }
+
+  takePhoto(){
+    
   }
 
 }

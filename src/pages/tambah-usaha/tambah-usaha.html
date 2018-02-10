@@ -15,42 +15,147 @@
 
     <img src="assets/pict/logo.png" class='Logo'>
 
-    <form #loginForm="ngForm" novalidate>
+    <form #tambahForm="ngForm" novalidate>
       <ion-list>
         <ion-item>
-          <ion-label floating><p class="Head">Nama Usaha</p></ion-label>
-          <ion-input class="Head2" [(ngModel)]="namaUsaha" name="namaUsaha" type="email" #name="ngModel" spellcheck="false" autocapitalize="off"
-            required>
-          </ion-input>
-        </ion-item>
-        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
-        Nama Usaha harus diisi
-        </p>
-
-        <ion-item>
           <ion-label>Jenis Usaha</ion-label>
-          <ion-select [(ngModel)]="jenis">
-            <ion-option value="nes">NES</ion-option>
+          <ion-select [(ngModel)]="jenis" name="jenis">
+            <ion-option value="nes"><span >Makanan</span></ion-option>
             <ion-option value="n64">Nintendo64</ion-option>
-            <ion-option value="ps">PlayStation</ion-option>
-            <ion-option value="genesis">Sega Genesis</ion-option>
-            <ion-option value="saturn">Sega Saturn</ion-option>
-            <ion-option value="snes">SNES</ion-option>
           </ion-select>
         </ion-item>
-        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        <p ion-text [hidden]="submitted == false" color="light" padding-left class="Warning">
         Jenis Usaha harus diisi
         </p>
 
         <ion-item>
-          <ion-label floating><p class="Head">Lama Usaha (Dalam Tahun)</p></ion-label>
-          <ion-input class="Head2" [(ngModel)]="lamaUsaha" name="lamaUsaha" type="email" #old="ngModel" spellcheck="false" autocapitalize="off"
+          <ion-label floating><p class="Head">Nama Usaha</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="namaUsaha" name="namaUsaha" type="text" #nameUsaha="ngModel" spellcheck="false" autocapitalize="off"
             required>
           </ion-input>
         </ion-item>
-        <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
+        <p ion-text [hidden]="nameUsaha.valid || submitted == false" color="light" padding-left class="Warning">
+        Nama Usaha harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Lama Usaha (Dalam Tahun)</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="lamaUsaha" name="lamaUsaha" type="string" #oldUsaha="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="oldUsaha.valid || submitted == false" color="light" padding-left class="Warning">
         Lama Usaha harus diisi
         </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Omzet Pertahun (Rp.)</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="omzet" name="omzet" type="string" #profit="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="profit.valid || submitted == false" color="light" padding-left class="Warning">
+        Omzet harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Deskripsi Usaha</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="deskripsi" name="deskripsi" type="string" #description="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="description.valid || submitted == false" color="light" padding-left class="Warning">
+        Deskripsi harus diisi
+        </p>
+
+
+        <ion-item>
+          <ion-label floating><p class="Head">Alamat Usaha</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="alamat" name="alamat" type="string" #address="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="address.valid || submitted == false" color="light" padding-left class="Warning">
+        Alamat Usaha harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Email Usaha</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="surel" name="surel" type="string" #email="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="email.valid || submitted == false" color="light" padding-left class="Warning">
+        Alamat Usaha harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Nomor Telepon Usaha</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="nomor" name="nomor" type="string" #number="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="number.valid || submitted == false" color="light" padding-left class="Warning">
+        Nomor Telepon Usaha harus diisi
+        </p>
+
+        <ion-item>
+          <ion-label floating><p class="Head">Website</p></ion-label>
+          <ion-input class="Head2" [(ngModel)]="situs" name="situs" type="url" #website="ngModel" spellcheck="false" autocapitalize="off"
+            required>
+          </ion-input>
+        </ion-item>
+        <p ion-text [hidden]="website.valid || submitted == false" color="light" padding-left class="Warning">
+        Nomor Telepon Usaha harus diisi
+        </p>
+
+        <div>
+          <div class="media" no-padding>Sosial Media Usaha</div>
+          <ion-list>
+            <ion-item id="social">
+          
+              <ion-input class="Head3" [(ngModel)]="facebook" name="facebook" type="text" #fb="ngModel" spellcheck="false" autocapitalize="off" placeholder="Facebook" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social">
+              <ion-input class="Head3" [(ngModel)]="twitter" name="twitter" type="url" #twit="ngModel" spellcheck="false" autocapitalize="off" placeholder="Twitter" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social">
+              <ion-input class="Head3" [(ngModel)]="line" name="line" type="url" #garis="ngModel" spellcheck="false" autocapitalize="off" placeholder="id line" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social">
+              <ion-input class="Head3" [(ngModel)]="instagram" name="instagram" type="url" #ig="ngModel" spellcheck="false" autocapitalize="off" placeholder="instagram" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social" [hidden]="true">
+            </ion-item>
+          </ion-list>
+        </div>
+
+        <div>
+          <div class="media" no-padding>Legalitas Usaha</div>
+          <ion-list>
+              <button ion-button class="legalitas">Kartu Legalitas</button>
+          </ion-list>
+        </div>
+
+        <div>
+          <div class="media" no-padding>Logo Usaha</div>
+          <button class="camera" ion-button icon-left (click)="takePhoto()" block>
+            <ion-icon name="camera"></ion-icon>
+            Ambil Foto
+          </button>
+        </div>
+
+        <div>
+          <button ion-button class="simpan" block>Simpan</button>
+        </div>
       </ion-list>
     </form>
 
