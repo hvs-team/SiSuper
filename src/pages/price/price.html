@@ -9,9 +9,9 @@
 
 
 <ion-content padding class="background">
-  <button class='ButtonBig' color="sisuperPurpleDark" block ion-button (click)='Daftar()'><p class="ButtonWordWhite">Kustomisasi Daftar</p></button>
+  <button class='ButtonBig' color="sisuperPurpleDark" block ion-button (click)='kostumisasi()'><p class="ButtonWordWhite">Kustomisasi Daftar</p></button>
 
-  <div class="priceCard">
+  <div class="priceCard" (click)='gotoDetail()'>
     <ion-row no-padding>
       <ion-col col-6 no-padding>
         <span class="name">Ayam Broiler</span>
@@ -24,7 +24,7 @@
     </ion-row>
   </div>
 
-  <div class="priceCard">
+  <div class="priceCard" (click)='gotoDetail()'>
       <ion-row no-padding>
         <ion-col col-6 no-padding>
           <span class="name">Ayam Broiler</span>

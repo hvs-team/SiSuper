@@ -1,3 +1,75 @@
 page-price-detail {
 
+    .Title{
+        color: #f4f4f4;
+        font-size: 6vw;
+        font-weight: 700;
+    }
+    .invisibleButton {
+        height:10px;
+        width:60px;
+    }
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: $cssPurpleLight;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .wordNavbar{
+        color: #f4f4f4;
+        font-size: 7vw;
+        font-weight: 700;
+
+        font-style: italic;
+    }
+
+
+    .ButtonBig {
+        margin: auto;
+        width: 90%;
+        height: 14vw !important;
+        border: 2px solid rgba(255,255,255,0.7);
+        margin-bottom: 2.5vh;
+    }
+
+    .ButtonWordWhite {
+        font-size: 6vw;
+        font-weight: 2px;
+        color: white;
+        text-transform: capitalize;
+    }
+
+    //produkcard
+    .produkCard{
+        background-color: white;
+        border: 2px solid $cssPurpleDark;
+        padding: 2.5vw;
+        margin: 1vh 0;
+    }
+    
+    .produkHeader{
+        padding-bottom: 1vw;
+        border-bottom: 1px solid rgba(0,0,0,0.7);
+    }
+
+    .produkContent{
+        font-size: 4vw;
+        font-weight: 500;
+    }
+
+    .produkPhone{
+        font-size: 4vw;
+        font-style: italic;
+        // font-weight: 400;
+    }
+
+    .produkPrice{
+        margin: 2vh 0;
+    }
+
+    .produkPriceText{
+        font-size: 6vw;
+        font-weight: 500;
+    }
 }

@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="sisuperPurpleDark" text-center>
+      <ion-title><span class="Title">Daftar Harga</span><button ion-button clear class="invisibleButton"></button></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+
+  <div id="SearchBar">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Cari barang..."></ion-searchbar>
+  </div>
+
+  <ion-list [hidden]="search == false">
+        <ion-item *ngFor="let data of list_search">
+          <ion-label class="Content">Ayam Broiler</ion-label>
+          <ion-checkbox item-right [(ngModel)]="AyamBroiler"></ion-checkbox>
+        </ion-item>
+  </ion-list>
+
+  <!-- <button class='ButtonBig' color="sisuperPurpleDark" block ion-button (click)='tambahProduk()'><p class="ButtonWordWhite">Urutkan & Saring</p></button> -->
+
+  <ion-list [hidden]="search == true">
+
+  <ion-item>
+    <ion-label class="Content">Ayam Broiler</ion-label>
+    <ion-checkbox item-right [(ngModel)]="AyamBroiler"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="Content">Cabai Rawit</ion-label>
+    <ion-checkbox item-right [(ngModel)]="CabaiRawit"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="Content">Tempe</ion-label>
+    <ion-checkbox item-right [(ngModel)]="Tempe"></ion-checkbox>
+  </ion-item>
+
+  
+  </ion-list>
+  
+  <!-- <div class="produkCard">
+    <ion-label class="produk">Aviqah Andriani</ion-label>
+    <ion-checkbox item-right [(ngModel)]="AviqahAndriani"></ion-checkbox>
+  </div> -->
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-navbar color="sisuperPurpleMedium" text-center>
+      <button class="ButtonMasuk" color="secondary" ion-button (click)="addAgenda()" block><p class="ButtonWord">Simpan Daftar</p></button>
+  </ion-navbar>
+
+</ion-footer>

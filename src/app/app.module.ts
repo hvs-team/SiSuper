@@ -25,13 +25,17 @@ import { AgendaPage } from '../pages/agenda/agenda';
 import { TambahUsahaPage } from '../pages/tambah-usaha/tambah-usaha';
 import { ProdukkuTambahPage } from '../pages/produkku-tambah/produkku-tambah';
 import { AgendaDetailPage } from '../pages/agenda-detail/agenda-detail';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProdukkuUbahPage } from '../pages/produkku-ubah/produkku-ubah';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { EditProfileUsahaPage } from '../pages/edit-profile-usaha/edit-profile-usaha';
+import { PriceEditPage } from '../pages/price-edit/price-edit';
 
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
+import { Data } from '../providers/data';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,7 @@ import { EditProfileUsahaPage } from '../pages/edit-profile-usaha/edit-profile-u
     OnboardingPage,
     PricePage,
     PriceDetailPage,
+    PriceEditPage,
     ProdukkuPage,
     ProdukkuTambahPage,
     ProdukkuUbahPage,
@@ -63,7 +68,9 @@ import { EditProfileUsahaPage } from '../pages/edit-profile-usaha/edit-profile-u
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -79,6 +86,7 @@ import { EditProfileUsahaPage } from '../pages/edit-profile-usaha/edit-profile-u
     OnboardingPage,
     PricePage,
     PriceDetailPage,
+    PriceEditPage,
     ProdukkuPage,
     ProdukkuTambahPage,
     ProdukkuUbahPage,
@@ -96,6 +104,9 @@ import { EditProfileUsahaPage } from '../pages/edit-profile-usaha/edit-profile-u
   providers: [
     StatusBar,
     SplashScreen,
+
+    Data,
+
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

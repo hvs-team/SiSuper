@@ -9,6 +9,11 @@
 
 
 <ion-content>
+
+  <div id="SearchBar">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Cari barang..."></ion-searchbar>
+  </div>
+
   <div class="card" (click)="gotoDetail()">
     <ion-row no-padding>
       <ion-col col-2 no-padding text-center>
