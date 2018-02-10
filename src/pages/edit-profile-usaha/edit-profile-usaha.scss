@@ -1,3 +1,59 @@
 page-edit-profile-usaha {
+    .wordNavbar{
+        color: #f4f4f4;
+        font-size: 7vw;
+        font-weight: 700;
+        font-style: italic;
+    }
 
+    .background {
+        //background-image: url('../assets/pict/welcome.png');
+        background-color: rgb(47, 151, 236);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .Head {
+        font-size: 5vw;
+        color: white;
+    }
+
+    .Head2 {
+        font-size: 5vw;
+        color: white;
+    }
+
+    .Head3{
+        font-size: 3vw;
+        color: white;
+        height: 2 vw;
+    }
+
+    .item-md {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .text-input::-moz-placeholder {
+        color: white;
+        font-size: 5vw;
+      }
+      
+    .text-input:-ms-input-placeholder {
+      color: white;
+      font-size: 5vw;
+    }
+      
+    .text-input::-webkit-input-placeholder {
+      color: white;
+      font-size: 5vw;
+    }
+
+    .media{
+        font-size: 5vw;
+        color: white;
+        padding-left: 16px;
+        padding-top: 5vh;
+        margin: 0 0;
+        height: 50%;
+    }
 }

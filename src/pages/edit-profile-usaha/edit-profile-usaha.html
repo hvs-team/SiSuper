@@ -6,13 +6,104 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>edit-profile-usaha</ion-title>
+  <ion-navbar color="sisuperPurpleDark">
+      <ion-title text-right><span class="wordNavbar">Edit Profile Usaha</span></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="background" padding>
+  <form #editProfileUsahaForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+          <ion-label>Jenis Usaha</ion-label>
+          <ion-select [(ngModel)]="jenis" name="jenis">
+            <ion-option value="nes"><span >Makanan</span></ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+          </ion-select>
+        </ion-item>
 
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="namaUsaha" name="namaUsaha" type="text" #nameUsaha="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Nama Usahaku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="lamaUsaha" name="lamaUsaha" type="string" #oldUsaha="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="lama usahaku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="omzet" name="omzet" type="string" #profit="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Omzet Pertahunku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="deskripsi" name="deskripsi" type="string" #description="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Deskripsi Usahaku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="alamat" name="alamat" type="string" #address="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Alamat Usahaku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="surel" name="surel" type="string" #email="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Email Usahaku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="nomor" name="nomor" type="string" #number="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Nomor Telefon Usahaku">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input class="Head2" [(ngModel)]="situs" name="situs" type="url" #website="ngModel" spellcheck="false" autocapitalize="off"
+            required placeholder="Website Usahaku">
+          </ion-input>
+        </ion-item>
+        
+        <div>
+          <div class="media" no-padding>Sosial Media Usaha</div>
+          <ion-list>
+            <ion-item id="social">
+              <ion-input class="Head2" [(ngModel)]="facebook" name="facebook" type="text" #fb="ngModel" spellcheck="false" autocapitalize="off" placeholder="Facebookku" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social">
+              <ion-input class="Head2" [(ngModel)]="twitter" name="twitter" type="url" #twit="ngModel" spellcheck="false" autocapitalize="off" placeholder="Twitterku" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social">
+              <ion-input class="Head2" [(ngModel)]="line" name="line" type="url" #garis="ngModel" spellcheck="false" autocapitalize="off" placeholder="id lineku" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social">
+              <ion-input class="Head2" [(ngModel)]="instagram" name="instagram" type="url" #ig="ngModel" spellcheck="false" autocapitalize="off" placeholder="instagramku" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item id="social" [hidden]="true">
+            </ion-item>
+          </ion-list>
+        </div>
+    </ion-list>
+    <ion-row>
+        <ion-col>
+          <button class="ButtonMasuk" color="sisuperPurpleDark" ion-button (click)="editProfileUsaha()" block><p class="ButtonWord">Simpan</p></button>
+        </ion-col>
+      </ion-row>
+  </form>
 </ion-content>

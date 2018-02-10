@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the EditProfileUsahaPage page.
@@ -8,7 +9,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-edit-profile-usaha',
   templateUrl: 'edit-profile-usaha.html',
@@ -21,5 +21,9 @@ export class EditProfileUsahaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditProfileUsahaPage');
   }
+
+  editProfileUsaha(){
+  this.navCtrl.push(ProfilePage);
+}
 
 }
