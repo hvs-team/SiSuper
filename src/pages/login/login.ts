@@ -60,6 +60,34 @@ export class LoginPage {
     this.navCtrl.setRoot(ListUsahaPage)
   }
 
+  lupaPassword(){
+    let prompt = this.alertCtrl.create({
+      title: 'Lupa Password',
+      message: "Masukan Email anda dan password yang sesuai akan dikirimkan ke Email tersebut",
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'email'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Batal',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Kirim',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
   masuk(form: NgForm) {
     
     this.submitted = true;

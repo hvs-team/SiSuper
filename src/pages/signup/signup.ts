@@ -6,6 +6,8 @@ import { ProdukkuPage } from '../produkku/produkku';
 import { Data } from '../../providers/data';
 import { NgForm } from '@angular/forms';
 import { Http } from '@angular/http';
+import { ListPage } from '../list/list';
+import { ListUsahaPage } from '../list-usaha/list-usaha';
 
 @Component({
   selector: 'page-signup',
@@ -54,7 +56,7 @@ export class SignupPage {
   }
 
   signup(){
-    this.navCtrl.setRoot(ProdukkuPage);
+    this.navCtrl.setRoot(ListUsahaPage);
   }
 
   daftar(form: NgForm) {
