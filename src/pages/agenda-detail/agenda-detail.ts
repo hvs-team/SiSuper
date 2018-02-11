@@ -10,6 +10,15 @@ import { Http } from '@angular/http';
 })
 export class AgendaDetailPage {
 
+  deskripsi_kegiatan:any;
+  id_agenda:any;
+  id_kegiatan:any;
+  id_usaha:any;
+  lokasi_kegiatan:any;
+  nama_kegiatan:any;
+  oleh_kegiatan:any;
+  tanggal_kegiatan:any;
+
   constructor(
   public navCtrl: NavController, 
   public navParams: NavParams,
@@ -18,7 +27,16 @@ export class AgendaDetailPage {
   private data : Data,
   public http: Http) {
 
-  
+      let temp = this.navParams.data;
+      this.deskripsi_kegiatan = temp.deskripsi_kegiatan;
+      this.id_agenda = temp.id_agenda;
+     this.id_kegiatan = temp.id_kegiatan;
+      this.id_usaha = temp.id_usaha;
+      this.lokasi_kegiatan = temp.lokasi_kegiatan;
+      this.nama_kegiatan = temp.nama_kegiatan;
+      this.oleh_kegiatan = temp.oleh_kegiatan;
+      this.tanggal_kegiatan = temp.tanggal_kegiatan;
+
 
   }
 

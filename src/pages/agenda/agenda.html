@@ -13,13 +13,13 @@
     <div class="eventCard" (click)="gotoDetail(agenda)" *ngFor="let agenda of agendas">
       <img alt="Gambar Rusak" class="pictEvent" src="assets/pict/event.jpg"/>
       <div class="dateEvent">
-          <ion-icon name="md-calendar" class='dateEvent'></ion-icon> 04 Februari 2018
+          <ion-icon name="md-calendar" class='dateEvent'></ion-icon> {{agenda.tanggal_kegiatan}}
       </div>
       <div class="nameEvent">
-        Sertifikasi Halal Masal Gratis
+        {{agenda.nama_kegiatan}}
       </div>
       <div class="addressEvent">
-          <ion-icon name="md-pin" class="dateEvent"></ion-icon> Jl. Proklamasi No.51 Menteng, Jakarta Pusat Jl. Proklamasi No.51 Menteng, Jakarta Pusat Jl. Proklamasi No.51 Menteng, Jakarta Pusat Jl. Proklamasi No.51 Menteng, Jakarta Pusat Jl. Proklamasi No.51 Menteng, Jakarta Pusat 
+          <ion-icon name="md-pin" class="dateEvent"></ion-icon> {{agenda.lokasi_kegiatan}}
       </div>
     </div>
   
