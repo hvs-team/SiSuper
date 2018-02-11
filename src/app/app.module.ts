@@ -36,6 +36,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http';
 import { Data } from '../providers/data';
+import { Storage } from '@ionic/storage';
+import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { Http } from '@angular/http';
+
+
+let storage = new Storage({});
+
+
+export function getAuthHttp(http) {
+  return new AuthHttp(new AuthConfig({
+    headerPrefix: "Bearer",
+    noJwtError: true,
+    globalHeaders: [{'Authorization': 'application/json'}],
+    tokenGetter: (() => storage.get('access_token').then((token: string) => token)),
+  }), http);
+}
+
 
 @NgModule({
   declarations: [
@@ -106,6 +123,11 @@ import { Data } from '../providers/data';
     SplashScreen,
 
     Data,
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http]
+    },
 
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -5,8 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="sisuperPurpleDark">
-    <ion-title>Tambah Usaha</ion-title>
+  <ion-navbar color="sisuperPurpleDark" text-center>
+    <ion-title><span class="Title">Tambah Usaha</span><button ion-button clear class="invisibleButton"></button></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -17,8 +17,8 @@
     <form #tambahForm="ngForm" novalidate>
       <ion-list>
         <ion-item>
-          <ion-label>Jenis Usaha</ion-label>
-          <ion-select [(ngModel)]="jenis" name="jenis">
+          <ion-label><p class="Head">Jenis Usaha</p></ion-label>
+          <ion-select class="Head2" [(ngModel)]="jenis" name="jenis">
             <ion-option value="nes"><span >Makanan</span></ion-option>
             <ion-option value="n64">Nintendo64</ion-option>
           </ion-select>
@@ -140,16 +140,18 @@
         <div>
           <div class="media" no-padding>Legalitas Usaha</div>
           <ion-list>
-              <button ion-button class="legalitas">Kartu Legalitas</button>
+              <button ion-button color="light" block class="legalitas">Kartu Legalitas</button>
           </ion-list>
         </div>
 
         <div>
           <div class="media" no-padding>Logo Usaha</div>
-          <button class="camera" ion-button icon-left (click)="takePhoto()" block>
-            <ion-icon name="camera"></ion-icon>
-            Ambil Foto
-          </button>
+          <ion-list>
+            <button class="camera" color="light" ion-button  block icon-left (click)="takePhoto()">
+              <ion-icon name="camera"></ion-icon>
+              Ambil Foto
+            </button>
+          </ion-list>
         </div>
 
         <div>

@@ -15,6 +15,9 @@ import { ProfileUsahaPage } from '../pages/profile-usaha/profile-usaha';
 import { AgendaPage } from '../pages/agenda/agenda';
 import { Data } from '../providers/data';
 
+import { AuthHttp } from 'angular2-jwt';
+import { Http } from '@angular/http';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,7 +28,13 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private data : Data) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    private data : Data,
+    public authHttp: AuthHttp,
+    public http: Http) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -64,5 +73,12 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+
+  getToken(){
+    //tembak api buat generate token
+    
+
   }
 }
