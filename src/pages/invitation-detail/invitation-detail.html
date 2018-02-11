@@ -12,29 +12,31 @@
     
     <img alt="Gambar Rusak" class="pictEvent" src="assets/pict/event.jpg"/>
     <div class="nameEvent">
-      Sertifikasi Halal Masal Gratis
+      {{nama_undangan}}
     </div>
     <div class="hostEvent">
-      Oleh MUI
+      Oleh {{oleh_undangan}}
     </div>
     
     <ion-item no-lines class="content" text-wrap>
       <ion-icon name="md-calendar" item-left></ion-icon>
       <p class="contentTitle">Tanggal & Waktu</p>
-      <p class="contentText">04 Februari 2018 (07.00 WIB) - </p>
-      <p class="contentText">04 Februari 2018 (09.00 WIB)</p>
+      <p class="contentText">{{tanggal_undangan}} </p>
+
+      <!-- <p class="contentText">04 Februari 2018 (07.00 WIB) - </p>
+      <p class="contentText">04 Februari 2018 (09.00 WIB)</p> -->
     </ion-item>
     
     <ion-item no-lines class="content" text-wrap>
       <ion-icon name="md-pin" item-left></ion-icon>
       <p class="contentTitle">Lokasi</p>
-      <p class="contentText">Jl. Proklamasi No.51 Menteng, Jakarta Pusat Jl. Proklamasi No.51 Menteng, Jakarta Pusat</p>
+      <p class="contentText">{{lokasi_undangan}}</p>
     </ion-item>
     
     <ion-item no-lines class="content" text-wrap>
       <ion-icon name="md-list-box" item-left></ion-icon>
       <p class="contentTitle">Deskripsi</p>
-      <p class="contentText" style="text-align: justify">Sertifikasi gratis halal ini diharapkan dapat meningkatkan pemahaman tentang pentingnya kemasan untuk meningkatkan nilai tambah produk dan dapat diterapkan langsung untuk perusahaannya(UKM)</p>
+      <p class="contentText" style="text-align: justify">{{deskripsi_undangan}})</p>
     </ion-item>
   </ion-content>
   

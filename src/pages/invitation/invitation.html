@@ -11,48 +11,52 @@
 <ion-content>
 
   <div id="SearchBar">
-    <ion-searchbar (ionInput)="getItems($event)" placeholder="Cari barang..."></ion-searchbar>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Cari undangan..."></ion-searchbar>
   </div>
 
-  <div class="card" (click)="gotoDetail()">
-    <ion-row no-padding>
-      <ion-col col-2 no-padding text-center>
-        <img alt="Gambar Rusak" class="pict" src="assets/pict/event.jpg"/>
-      </ion-col>
-      <ion-col col-8 no-padding>
-        <div class="sender">
-          MUI
-        </div>
-        <div class="content">
-          Sertifikasi Halal
-        </div>
-      </ion-col>
-      <ion-col col-2 no-padding>
-        <div class="date">
-          31/12/2017
-        </div>
-      </ion-col>
-    </ion-row>
+  <div [hidden]="search == false">
+    <div class="card" (click)="gotoDetail()" *ngFor="let invitation of list_search">
+      <ion-row no-padding>
+        <ion-col col-2 no-padding text-center>
+          <img alt="Gambar Rusak" class="pict" src="assets/pict/event.jpg"/>
+        </ion-col>
+        <ion-col col-8 no-padding>
+          <div class="sender">
+            {{invitation.oleh_undangan}}
+          </div>
+          <div class="content">
+            {{invitation.nama_undangan}}
+          </div>
+        </ion-col>
+        <ion-col col-2 no-padding>
+          <div class="date">
+            {{invitation.tanggal_undangan}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
   </div>
 
-  <div class="card" (click)="gotoDetail()">
-    <ion-row no-padding>
-      <ion-col col-2 no-padding text-center>
-        <img alt="Gambar Rusak" class="pict" src="assets/pict/event.jpg"/>
-      </ion-col>
-      <ion-col col-8 no-padding>
-        <div class="sender">
-          MUI
-        </div>
-        <div class="content">
-          Sertifikasi Halal
-        </div>
-      </ion-col>
-      <ion-col col-2 no-padding>
-        <div class="date">
-          31/12/2017
-        </div>
-      </ion-col>
-    </ion-row>
+  <div [hidden]="search == true">
+    <div class="card" (click)="gotoDetail(invitation)" *ngFor="let invitation of invitations">
+      <ion-row no-padding>
+        <ion-col col-2 no-padding text-center>
+          <img alt="Gambar Rusak" class="pict" src="assets/pict/event.jpg"/>
+        </ion-col>
+        <ion-col col-8 no-padding>
+          <div class="sender">
+            {{invitation.oleh_undangan}}
+          </div>
+          <div class="content">
+            {{invitation.nama_undangan}}
+          </div>
+        </ion-col>
+        <ion-col col-2 no-padding>
+          <div class="date">
+            {{invitation.tanggal_undangan}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
   </div>
 </ion-content>
