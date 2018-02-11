@@ -49,7 +49,6 @@ export class ProdukkuPage {
     let loading = this.loadCtrl.create({
       content: 'memuat..'
     });
-
     
     loading.present();
     //api
