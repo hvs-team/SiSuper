@@ -30,7 +30,7 @@ export class AgendaDetailPage {
       let temp = this.navParams.data;
       this.deskripsi_kegiatan = temp.deskripsi_kegiatan;
       this.id_agenda = temp.id_agenda;
-     this.id_kegiatan = temp.id_kegiatan;
+      this.id_kegiatan = temp.id_kegiatan;
       this.id_usaha = temp.id_usaha;
       this.lokasi_kegiatan = temp.lokasi_kegiatan;
       this.nama_kegiatan = temp.nama_kegiatan;

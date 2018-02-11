@@ -8,19 +8,19 @@ page-edit-profile {
 
     .background {
         //background-image: url('../assets/pict/welcome.png');
-        background-color: rgb(47, 151, 236);
+        background-color: white;
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .Head {
         font-size: 5vw;
-        color: white;
+        color: #222;
     }
 
     .Head2 {
         font-size: 5vw;
-        color: white;
+        color: #222;
     }
 
     .item-md {
@@ -28,17 +28,17 @@ page-edit-profile {
     }
 
     .text-input::-moz-placeholder {
-        color: white;
+        color: #222;
         font-size: 5vw;
       }
       
       .text-input:-ms-input-placeholder {
-        color: white;
+        color: #222;
         font-size: 5vw;
       }
       
       .text-input::-webkit-input-placeholder {
-        color: white;
+        color: #222;
         font-size: 5vw;
       }
 }

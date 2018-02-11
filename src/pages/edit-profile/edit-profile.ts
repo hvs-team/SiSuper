@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Data } from '../../providers/data';
 
 /**
  * Generated class for the EditProfilePage page.
@@ -14,11 +15,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  nama:any;
+  email:any;
+  nomorTelepon:any;
+  alamat:any;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private data: Data) {
+
+    this.data.getData().then((data) =>
+    {
+      this.nama = data.nama_user;
+      this.email = data.email_user;
+      this.nomorTelepon = data.telepon_user;
+      this.alamat = data.alamat_user;
+      console.log(data);
+    })
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditProfilePage');
+  }
+
+  editProfile(){
+    this.navCtrl.pop();
   }
 
 }

@@ -90,7 +90,7 @@ export class SignupPage {
           // this.data.token(response.token);   
           
           
-          this.data.login(response.user,"user");//ke lokal
+          this.data.login(response.data,"user");//ke lokal
           this.signup();
           loading.dismiss();
         }

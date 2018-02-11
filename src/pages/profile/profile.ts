@@ -5,6 +5,8 @@ import { Data } from '../../providers/data';
 import { OnboardingPage } from '../onboarding/onboarding';
 import { LoginPage } from '../login/login';
 
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ActionSheetController } from 'ionic-angular/components/action-sheet/action-sheet-controller';
 
 
 @Component({
@@ -18,11 +20,17 @@ export class ProfilePage {
   nomor:any;
   alamat:any;
 
+  image:any;
+
+  validPhoto= false;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private data : Data,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    public actionSheetCtrl : ActionSheetController,
+    private camera: Camera, ) {
 
      this.data.getData().then((data) =>
     {
@@ -65,6 +73,77 @@ export class ProfilePage {
       ]
     });
       confirm.present();
+  }
+
+
+  tambahsertifikat(){
+    this.updatePicture();
+  }
+
+
+
+  updatePicture() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Pilihan',
+      buttons: [
+        {
+          text: 'Ambil Gambar Baru',
+          role: 'ambilGambar',
+          handler: () => {
+            this.takePicture();
+          }
+        },
+        {
+          text: 'Pilih Dari Galleri',
+          role: 'gallery',
+          handler: () => {
+            this.getPhotoFromGallery();
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  async takePicture(){
+    try {
+      const options : CameraOptions = {
+        quality: 50, //to reduce img size
+        targetHeight: 600,
+        targetWidth: 600,
+        destinationType: this.camera.DestinationType.DATA_URL, //to make it base64 image
+        encodingType: this.camera.EncodingType.JPEG,
+        mediaType:this.camera.MediaType.PICTURE,
+        correctOrientation: true
+      }
+
+      const result =  await this.camera.getPicture(options);
+
+      this.image = 'data:image/jpeg;base64,' + result;
+
+      this.validPhoto=true;
+
+    }
+    catch (e) {
+      console.error(e);
+      alert("error");
+    }
+
+  }
+
+  getPhotoFromGallery(){
+    this.camera.getPicture({
+        destinationType: this.camera.DestinationType.DATA_URL,
+        sourceType     : this.camera.PictureSourceType.PHOTOLIBRARY,
+        targetWidth: 600,
+        targetHeight: 600
+    }).then((imageData) => {
+      // this.base64Image = imageData;
+      // this.uploadFoto();
+      this.image = 'data:image/jpeg;base64,' + imageData;
+      this.validPhoto=true;
+      }, (err) => {
+    });
   }
 
 }
