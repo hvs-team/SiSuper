@@ -147,11 +147,12 @@
         <div>
           <div class="media" no-padding>Logo Usaha</div>
           <ion-list>
-            <button class="camera" color="light" ion-button  block icon-left (click)="takePhoto()">
+            <button class="camera" color="light" ion-button  block icon-left (click)="updatePicture()">
               <ion-icon name="camera"></ion-icon>
               Ambil Foto
             </button>
           </ion-list>
+          <img [src]="image" *ngIf="image" class="Pict" (click)="updatePicture()"/>
         </div>
 
         <div>
