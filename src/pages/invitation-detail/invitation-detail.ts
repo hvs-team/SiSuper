@@ -20,6 +20,7 @@ export class InvitationDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     let temp = this.navParams.data;
+    
     this.deskripsi_undangan = temp.deskripsi_undangan;
     this.id_undangan = temp.id_undangan;
     this.id_usaha = temp.id_usaha;
