@@ -130,4 +130,21 @@ page-profile-usaha {
         margin: 0 0;
         height: 50%;
     }
+
+    .changeButton{
+        float: right;
+    }
+
+    .invisible{
+        float: left;
+    }
+
+    .invisibleText{
+        color: rgba(0,0,0,0);
+    }
+
+    .change{
+        font-size: 6vw;
+        color: #222;
+    }
 }

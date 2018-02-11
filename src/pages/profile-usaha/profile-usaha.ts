@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditProfileUsahaPage } from '../edit-profile-usaha/edit-profile-usaha';
+import { ListUsahaPage } from '../list-usaha/list-usaha';
 
 
 @Component({
@@ -18,6 +19,10 @@ export class ProfileUsahaPage {
 
   editProfil(){
     this.navCtrl.push(EditProfileUsahaPage);
+  }
+
+  changeUsaha(){
+    this.navCtrl.setRoot(ListUsahaPage);
   }
 
 }

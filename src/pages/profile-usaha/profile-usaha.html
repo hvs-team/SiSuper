@@ -15,7 +15,9 @@
   </div>
   <img [src]="image" *ngIf="image"/>  
   <ion-item padding-right text-wrap>
-    <p class="Nama">Usahaku</p>
+      <button clear class="invisible" ion-button (click)='changeUsaha()'><ion-icon class="invisibleText" name="md-repeat"></ion-icon></button>
+
+    <p class="Nama">Usahaku<button clear class="changeButton" ion-button (click)='changeUsaha()'><ion-icon class="change" name="md-repeat"></ion-icon></button></p>
   </ion-item>
   <ion-item padding-right text-wrap>
     <p class="Head">Pajak Pertahun Berdasarkan Omzet (Rp.)</p>
