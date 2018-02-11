@@ -29,8 +29,8 @@ export class EventPage {
     console.log('ionViewDidLoad EventPage');
   }
 
-  gotoDetail(){
-    this.navCtrl.push(EventDetailPage);
+  gotoDetail(data){
+    this.navCtrl.push(EventDetailPage, data);
   }
 
   getKegiatan(){
