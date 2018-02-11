@@ -116,7 +116,7 @@ export class LoginPage {
           // this.data.token(response.token);   
           
           
-          this.data.login(response.user,"user");//ke lokal
+          this.data.login(response.data,"user");//ke lokal
           this.login();
           loading.dismiss();
         }
