@@ -88,7 +88,7 @@ export class InvitationPage {
 
 
       this.list_search = this.list_search.filter((data) => {
-        return (data.nama_undangan.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return ((data.nama_undangan.toLowerCase().indexOf(val.toLowerCase()) > -1) || (data.oleh_undangan.toLowerCase().indexOf(val.toLowerCase()) > -1));
       })
     }
     else {

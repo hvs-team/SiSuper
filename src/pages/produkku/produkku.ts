@@ -12,7 +12,7 @@ import { Http } from '@angular/http';
 })
 export class ProdukkuPage {
 
-  produkkus:any;
+  produkku:any;
 
   constructor(
     public navCtrl: NavController, 
@@ -57,7 +57,7 @@ export class ProdukkuPage {
       console.log(response); 
       if(response.status==200){    
 
-        this.produkkus = response.data;
+        this.produkku = response.data;
 
         loading.dismiss();
       }
