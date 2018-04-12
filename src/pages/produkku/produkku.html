@@ -11,7 +11,7 @@
 <ion-content padding class="background">
   <button class='ButtonBig' color="sisuperPurpleDark" block ion-button (click)='tambahProduk()'><p class="ButtonWordWhite">Tambah Produk</p></button>
 
-  <div class="produkCard" (click)='ubahProduk(produk)' *ngFor="let produk of produkkus">
+  <div class="produkCard" (click)='ubahProduk(produk)' *ngFor="let produk of produkku">
     <ion-row no-padding>
       <ion-col col-6 no-padding>
         <span class="produkContent">{{produk.nama_produk}}</span>
