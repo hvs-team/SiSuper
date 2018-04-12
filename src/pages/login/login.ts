@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,LoadingController,AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,LoadingController,AlertController, MenuController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { HomePage } from '../home/home';
 import { ProdukkuPage } from '../produkku/produkku';
@@ -29,7 +29,10 @@ export class LoginPage {
     private data : Data,
     public alertCtrl: AlertController,
     public loadCtrl: LoadingController,
+    public menuCtrl: MenuController,
     public http: Http) {
+
+      this.menuCtrl.enable(false);
   }
 
   ionViewDidLoad() {

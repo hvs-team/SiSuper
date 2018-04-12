@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController,LoadingController,AlertController   } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController,LoadingController,AlertController, MenuController   } from 'ionic-angular';
 import { ProdukkuTambahPage } from '../produkku-tambah/produkku-tambah';
 import { ProdukkuUbahPage } from '../produkku-ubah/produkku-ubah';
 import { Data } from '../../providers/data';
@@ -13,6 +13,7 @@ import { Http } from '@angular/http';
 export class ProdukkuPage {
 
   produkku:any;
+  i:number;
 
   constructor(
     public navCtrl: NavController, 
@@ -21,13 +22,18 @@ export class ProdukkuPage {
     private data : Data,
     public alertCtrl: AlertController,
     public loadCtrl: LoadingController,
-    public http: Http) {
+    public http: Http,
+    public menuCtrl: MenuController) {
 
-      this.getProdukku();
+
+    this.menuCtrl.enable(true);
+
   }
+  
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad ProdukkuPage');
+    this.getProdukku();
   }
 
   tambahProduk() {
@@ -59,6 +65,11 @@ export class ProdukkuPage {
 
         this.produkku = response.data;
 
+        for(let produk of this.produkku){
+          produk.harga_produk_rupiah = this.toRp(produk.harga_produk);
+        }
+
+
         loading.dismiss();
       }
       else {
@@ -72,6 +83,18 @@ export class ProdukkuPage {
       }
     });
     //api
+  }
+
+  toRp(angka){
+    var rev     = parseInt(angka, 10).toString().split('').reverse().join('');
+    var rev2    = '';
+    for(var i = 0; i < rev.length; i++){
+        rev2  += rev[i];
+        if((i + 1) % 3 === 0 && i !== (rev.length - 1)){
+            rev2 += '.';
+        }
+    }
+    return 'Rp. ' + rev2.split('').reverse().join('') + ',00';
   }
 
 }

@@ -11,15 +11,17 @@
 <ion-content padding class="background">
   <button class='ButtonBig' color="sisuperPurpleDark" block ion-button (click)='tambahProduk()'><p class="ButtonWordWhite">Tambah Produk</p></button>
 
-  <div class="produkCard" (click)='ubahProduk(produk)' *ngFor="let produk of produkku">
-    <ion-row no-padding>
-      <ion-col col-6 no-padding>
-        <span class="produkContent">{{produk.nama_produk}}</span>
-      </ion-col>
-      <ion-col col-6 no-padding text-right>
-        <span class="produkContent">Rp. {{produk.harga_produk}}/{{produk.satuan_produk}}</span>
-      </ion-col>
-    </ion-row>
-  </div>
+  <!-- <div *ngIf="produkku"> -->
+    <div class="produkCard" (click)='ubahProduk(produk)' *ngFor="let produk of produkku">
+      <ion-row no-padding>
+        <ion-col col-6 no-padding>
+          <span class="produkContent">{{produk.nama_produk}}</span>
+        </ion-col>
+        <ion-col col-6 no-padding>
+          <span class="produkContent">{{produk.harga_produk_rupiah}}/{{produk.satuan_produk}}</span>
+        </ion-col>
+      </ion-row>
+    </div>
+  <!-- </div> -->
 
 </ion-content>
