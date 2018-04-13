@@ -143,7 +143,7 @@ export class ProdukkuUbahPage {
 
   delete(){
     let confirm = this.alertCtrl.create({
-      title: 'Hapus Produk Ayam Geprek Pedes?',
+      title: 'Hapus Produk ?'+this.namaProduk+'?',
       
       buttons: [
         {
