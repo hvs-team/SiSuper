@@ -39,6 +39,7 @@ import { Data } from '../providers/data';
 import { Storage } from '@ionic/storage';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { Http } from '@angular/http';
+import { Autosize } from '../directives/autosize/autosize';
 
 
 let storage = new Storage({});
@@ -81,7 +82,9 @@ export function getAuthHttp(http) {
     EditProfileUsahaPage,
 
     ListPage,
-    TambahUsahaPage
+    TambahUsahaPage,
+
+    Autosize,
   ],
   imports: [
     BrowserModule,

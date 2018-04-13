@@ -66,7 +66,7 @@ export class LoginPage {
   lupaPassword(){
     let prompt = this.alertCtrl.create({
       title: 'Lupa Password',
-      message: "Masukan Email anda dan password yang sesuai akan dikirimkan ke Email tersebut",
+      message: "Masukan Email akun anda untuk menerima email bantuan",
       inputs: [
         {
           name: 'email',

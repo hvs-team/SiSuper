@@ -60,9 +60,9 @@
         <!-- alamat -->
         <ion-item>
             <ion-label floating><p class="Head">Alamat</p></ion-label>
-            <ion-input class="Head2" [(ngModel)]="alamat" name="alamat" type="string" #user="ngModel" spellcheck="false" autocapitalize="off"
+            <ion-textarea autosize class="Head2" [(ngModel)]="alamat" name="alamat" type="string" #user="ngModel" spellcheck="false" autocapitalize="off"
               required>
-            </ion-input>
+            </ion-textarea>
           </ion-item>
           <p ion-text [hidden]="user.valid || submitted == false" color="light" padding-left class="Warning">
           Alamat harus diisi
