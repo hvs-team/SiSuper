@@ -45,7 +45,55 @@ export class AgendaDetailPage {
   }
 
   eraseAgenda(){
-    this.navCtrl.pop();
+    let confirm = this.alertCtrl.create({
+      title: 'Hapus Agenda?',
+      message: 'agenda '+this.nama_kegiatan+' akan hilang dari list agenda anda.',
+      buttons: [
+        {
+          text: 'Batal',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Hapus',
+          handler: () => {
+            console.log('Agree clicked');
+            this.eraseApi();
+          }
+        }
+      ]
+    });
+      confirm.present();
+    
+  }
+
+  eraseApi(){
+    let loading = this.loadCtrl.create({
+      content: 'menghapus..'
+    });
+    
+    loading.present();
+    //api
+      this.http.get(this.data.BASE_URL+"/hapus_agenda.php?id_agenda="+this.id_agenda).subscribe(data => {
+      let response = data.json();
+      console.log(response); 
+      if(response.status==200){    
+        this.navCtrl.pop();
+      } 
+      else {
+        let alert = this.alertCtrl.create({
+            title: 'Gagal Menghapus Agenda',
+            subTitle: 'silahkan coba kembali',      
+            buttons: ['OK']
+          });
+          alert.present();
+      }
+
+
+        loading.dismiss();
+    });
+    //api
   }
 
   

@@ -80,6 +80,29 @@ export class ProfilePage {
     this.updatePicture();
   }
 
+  changePicture(){
+    let confirm = this.alertCtrl.create({
+      title: 'Perharui Sertifikat?',
+      message: 'anda dapat mengunggah ulang sertifikat',
+      buttons: [
+        {
+          text: 'Batal',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Perharui',
+          handler: () => {
+            console.log('Agree clicked');
+            this.updatePicture(); 
+          }
+        }
+      ]
+    });
+      confirm.present();
+  }
+
 
 
   updatePicture() {
