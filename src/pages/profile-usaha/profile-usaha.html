@@ -10,7 +10,7 @@
 
 <ion-content padding>
   <div class="photoprofile">
-    <ion-icon name="camera" class="editIcon"></ion-icon>
+    <ion-icon name="camera" class="editIcon" (click)="updatePicture()"></ion-icon>
     <img src="assets/pict/geprek.jpg" *ngIf="!image" class="Pict"/>
   </div>
   <img [src]="image" *ngIf="image"/>  
