@@ -9,20 +9,25 @@
   
   
   <ion-content class="background">
-  
-    <div class="eventCard" (click)="gotoDetail(agenda)" *ngFor="let agenda of agendas">
-      <img alt="Gambar Rusak" class="pictEvent" src="assets/pict/event.jpg"/>
-      <div class="dateEvent">
-          <ion-icon name="md-calendar" class='dateEvent'></ion-icon> {{agenda.tanggal_kegiatan}}
-      </div>
-      <div class="nameEvent">
-        {{agenda.nama_kegiatan}}
-      </div>
-      <div class="addressEvent">
-          <ion-icon name="md-pin" class="dateEvent"></ion-icon> {{agenda.lokasi_kegiatan}}
+
+    <div *ngIf="agendas">
+      <div class="eventCard" (click)="gotoDetail(agenda)" *ngFor="let agenda of agendas">
+        <img alt="Gambar Rusak" class="pictEvent" src="assets/pict/event.jpg"/>
+        <div class="dateEvent">
+            <ion-icon name="md-calendar" class='dateEvent'></ion-icon> {{agenda.tanggal_kegiatan}}
+        </div>
+        <div class="nameEvent">
+          {{agenda.nama_kegiatan}}
+        </div>
+        <div class="addressEvent">
+            <ion-icon name="md-pin" class="dateEvent"></ion-icon> {{agenda.lokasi_kegiatan}}
+        </div>
       </div>
     </div>
-  
+
+    <div *ngIf="!agendas" text-center>
+      <h3>Anda belum memiliki agenda.</h3>
+    </div>
     
   </ion-content>
   

@@ -21,11 +21,11 @@ export class AgendaPage {
     private data : Data,
     public http: Http) {
 
-      this.getAgenda();
 
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
+    this.getAgenda();
     console.log('ionViewDidLoad AgendaPage');
   }
 

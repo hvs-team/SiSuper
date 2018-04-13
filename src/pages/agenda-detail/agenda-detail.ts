@@ -47,7 +47,7 @@ export class AgendaDetailPage {
   eraseAgenda(){
     let confirm = this.alertCtrl.create({
       title: 'Hapus Agenda?',
-      message: 'agenda '+this.nama_kegiatan+' akan hilang dari list agenda anda.',
+      message: 'agenda '+this.nama_kegiatan+' akan hilang dari daftar agenda anda.',
       buttons: [
         {
           text: 'Batal',
@@ -75,7 +75,7 @@ export class AgendaDetailPage {
     
     loading.present();
     //api
-      this.http.get(this.data.BASE_URL+"/hapus_agenda.php?id_agenda="+this.id_agenda).subscribe(data => {
+      this.http.get(this.data.BASE_URL+"/hapus_agenda.php?id_agenda="+this.id_agenda+"&id_usaha=1").subscribe(data => {
       let response = data.json();
       console.log(response); 
       if(response.status==200){    
