@@ -11,7 +11,8 @@
 <ion-content padding>
   <div class="photoprofile">
     <ion-icon name="camera" class="editIcon"></ion-icon>
-    <img src="assets/imgs/logo.png" *ngIf="!image" class="Pict"/>
+    <img [src]="image" *ngIf="image" class="Pict"/>
+    <img src="assets/pict/profil.png" *ngIf="!image" class="Pict"/>
   </div>
   <img [src]="image" *ngIf="image"/>  
   <ion-item padding-right text-wrap>
@@ -33,12 +34,12 @@
     <p class="Head">Sertifikat</p>
     <ion-list>
       <ion-item>
-        <p class="Konten">Sertifikat 1</p>
-        <img src="assets/imgs/logo.png" *ngIf="!image"/>
+        <p class="Konten">Sertifikat Kepemimpinan</p>
+        <img src="assets/pict/sertifikatLeadership.jpg"/>
       </ion-item>
       <ion-item>
-          <p class="Konten">Sertifikat 1</p>
-          <img src="assets/imgs/logo.png" *ngIf="!image"/>
+          <p class="Konten">Sertifikat Wirausahawan</p>
+          <img src="assets/pict/sertifikatEntrepreneurship.jpg"/>
         </ion-item>
     </ion-list>
   </ion-item>
